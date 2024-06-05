@@ -1,0 +1,52 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: Roboto;
+}
+
+html {
+  scroll-behavior: smooth;  
+}
+
+body.menu-open {
+  overflow: hidden;
+}
+
+#formulario {
+  display: grid;
+  gap: 8px;
+  grid-template-areas:
+    "nome nome"
+    "email email"
+    "celular celular"
+    "mensagem mensagem"
+}
+
+#nome {
+  grid-area: nome;
+}
+
+#email {
+  grid-area: email;
+}
+
+#celular {
+  grid-area: celular;
+}
+
+#mensagem {
+  grid-area: mensagem;
+}
+
+@media (min-width: 960px) {
+  #formulario {
+    grid-template-areas:
+      "nome nome"
+      "email celular"
+      "mensagem mensagem"
+  }
+}
