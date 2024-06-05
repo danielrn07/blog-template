@@ -1,23 +1,10 @@
 import Card from '../Card'
 import { useState, useEffect } from "react";
 
-const apiUrl = "./../server.json";
+import { data } from "./data.jsx";
 
 const CardList = () => {
-  const [posts, setPosts] = useState([]);
-
-   useEffect(() => {
-    fetch(apiUrl)
-    .then((response) => response.json())
-    .then((data) => {
-      setPosts(data);
-    })
-    .catch((error) => {
-      console.error(error)
-    })
-   }, [])
-  console.log(posts)
-
+  const [posts, setPosts] = useState(data);
   return (
     <section className="flex justify-center max-w-[960px] mx-auto items-cente py-16 px-4 sm:py-32 sm:px-4">
       <div className="flex flex-col">
